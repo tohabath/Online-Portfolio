@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\_Homework\\CSE 310 Applied Programming\\Code\\CSE 310 Repository\\C-Sharp-Text-Adventure\\Text-Adventure\\Text-Adventure.csproj",
+      "projectUniqueName": "D:\\Documents\\_Homework\\CSE 310 Applied Programming\\Code\\CSE 310 Repository\\Text-Adventure\\Text-Adventure.csproj",
       "projectName": "Text-Adventure",
-      "projectPath": "D:\\Documents\\_Homework\\CSE 310 Applied Programming\\Code\\CSE 310 Repository\\C-Sharp-Text-Adventure\\Text-Adventure\\Text-Adventure.csproj",
+      "projectPath": "D:\\Documents\\_Homework\\CSE 310 Applied Programming\\Code\\CSE 310 Repository\\Text-Adventure\\Text-Adventure.csproj",
       "packagesPath": "C:\\Users\\mkabj\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\_Homework\\CSE 310 Applied Programming\\Code\\CSE 310 Repository\\C-Sharp-Text-Adventure\\Text-Adventure\\obj\\",
+      "outputPath": "D:\\Documents\\_Homework\\CSE 310 Applied Programming\\Code\\CSE 310 Repository\\Text-Adventure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mkabj\\AppData\\Roaming\\NuGet\\NuGet.Config"
