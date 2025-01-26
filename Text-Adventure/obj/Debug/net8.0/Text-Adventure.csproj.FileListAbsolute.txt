@@ -1,0 +1,15 @@
+d:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\bin\Debug\net8.0\Text-Adventure.exe
+D:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\bin\Debug\net8.0\Text-Adventure.deps.json
+D:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\bin\Debug\net8.0\Text-Adventure.runtimeconfig.json
+d:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\bin\Debug\net8.0\Text-Adventure.dll
+d:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\bin\Debug\net8.0\Text-Adventure.pdb
+d:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\obj\Debug\net8.0\Text-Adventure.GeneratedMSBuildEditorConfig.editorconfig
+d:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\obj\Debug\net8.0\Text-Adventure.AssemblyInfoInputs.cache
+d:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\obj\Debug\net8.0\Text-Adventure.AssemblyInfo.cs
+d:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\obj\Debug\net8.0\Text-Adventure.csproj.CoreCompileInputs.cache
+d:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\obj\Debug\net8.0\Text-Adventure.sourcelink.json
+d:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\obj\Debug\net8.0\Text-Adventure.dll
+d:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\obj\Debug\net8.0\refint\Text-Adventure.dll
+d:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\obj\Debug\net8.0\Text-Adventure.pdb
+D:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\obj\Debug\net8.0\Text-Adventure.genruntimeconfig.cache
+D:\Documents\_Homework\CSE 310 Applied Programming\Code\CSE 310 Repository\Text-Adventure\obj\Debug\net8.0\ref\Text-Adventure.dll
