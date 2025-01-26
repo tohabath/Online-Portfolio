@@ -394,6 +394,7 @@ public class Choices {
             break;
             case 14:
             System.Console.WriteLine("You have survived, victorious!\nUltimately, you overcome your foes and return home,\nfrom humble traveler to legendary hero!\n\nTHE END");
+            PauseClear(10);
             break;
         }
     }

@@ -32,7 +32,10 @@ namespace Text_Adventure
                 }
                 story.Story(i, check);
                 resources.Reward(story.GetDiary(), i);
-                resources.StatusUpdate();
+                if (i < 14)
+                {
+                    resources.StatusUpdate();
+                }
                 if (resources.CheckStatus() == false)
                 {
                     i = 100;
