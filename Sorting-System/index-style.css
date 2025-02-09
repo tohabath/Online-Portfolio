@@ -1,0 +1,2 @@
+#userInterface {display: flex; flex-direction: row; justify-content: space-evenly; width: 75vh;}
+#status, #fullList {margin-left: 10vh; display: block;}

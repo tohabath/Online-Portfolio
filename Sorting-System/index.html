@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Demo</title>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <link rel="stylesheet" href="./index-style.css" type="text/css" />
+    <script src="program.js"></script> 
+    <style type="text/css">.body { width: auto; }</style>
+  </head>
+  <body>
+    <br>
+    <div id="userInterface">
+      <input type="text" id="userInputtedLine">
+      <div>
+        <span id="ButtonAdd"><button type="button" onclick="AddItem()">Add</button></span>
+        <span id="ButtonComplete"><button type="button" onclick="CompleteItem()">Complete</button></span>
+        <span id="ButtonRemove"><button type="button" onclick="ClearItem()">Remove</button></span>
+      </div>
+    </div>
+    <div id="status"><br>Loading...<br><br></div>
+    <script>ClearStatus()</script>
+    <div id="fullList"></div>
+  </body>
+</html>
