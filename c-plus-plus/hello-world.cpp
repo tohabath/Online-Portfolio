@@ -5,6 +5,7 @@
 #include <map>
 #include "fileReader.cpp"
 #include "filePrinter.cpp"
+#include "fileWriter.cpp"
 using namespace std;
 
 // My plan is to do the file reader/analyzer suggestion. The program will read from a text file, display it, then
@@ -14,11 +15,14 @@ using namespace std;
 
 fileReader filereader;
 filePrinter fileprinter;
+fileWriter filewriter;
 int main()
 {
+    filewriter.writeToFile("index.txt");
     string s = filereader.readFile("index.txt");
     list<string> words = filereader.dissectFile(s);
-    fileprinter.printWords(s);
+    cout << "\nCounting words...\n" << endl;
     fileprinter.countWords(words);
+    cout << "\nCounting complete.\n" << endl;
     return 0;
 }
