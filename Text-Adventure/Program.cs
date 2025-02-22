@@ -20,6 +20,7 @@ namespace Text_Adventure
 
             for (int i = 0; i <= resources.GetTurns(); i++)
             {
+                //First: Random Outcomes
                 check = true;
                 switch (i)
                 {
@@ -30,12 +31,16 @@ namespace Text_Adventure
                     check = dice.SkillCheck(resources.GetRepute(), 10 + resources.GetDifMod());
                     break;
                 }
+                //Second: Story
                 story.Story(i, check);
+                //Third: Change resources
                 resources.Reward(story.GetDiary(), i);
                 if (i < 14)
                 {
+                    //Fourth: Status update
                     resources.StatusUpdate();
                 }
+                //Fifth: Check for game over
                 if (resources.CheckStatus() == false)
                 {
                     i = 100;

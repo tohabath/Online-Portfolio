@@ -11,6 +11,8 @@ public class Resources : Choices {
     private int turnsLeft = 15;
     //CONST
     //METH
+    
+    //Change resources based on choice and turn
     public void Reward(List<string> diary, int turn)
     {
         if (diary.Contains("boughtItemsFromWizard") && turn == 1)
@@ -91,6 +93,8 @@ public class Resources : Choices {
             SetHealth(GetHealth() - 2);
         }
     }
+    
+    //Reset resources for new game (unused)
     public void ResetResources(string difficulty)
     {
         switch (difficulty)
@@ -128,6 +132,8 @@ public class Resources : Choices {
         System.Console.WriteLine($"HEALTH: {GetHealth()}\nREPUTATION: {GetRepute()}\nGOLD: {GetGold()}\nMORALE: {GetMorale()}");
         PauseClear(3);
     }
+
+    //Getters and setters
     public int GetHealth()
     {
         return health;
@@ -169,6 +175,7 @@ public class Resources : Choices {
         morale = number;
     }
     
+    // Check if resources are depleted
     public bool CheckStatus()
     {
         if (health > 0 && repute > 0 && gold > 0 && morale > 0)
