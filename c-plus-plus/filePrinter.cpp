@@ -37,7 +37,7 @@ class filePrinter {
                 }
             return 0;
         }
-        int printWords (string s)
+        int printWords (string s) //Simply prints out everything from the string where the file's contents are stored.
         {
             cout << s << endl;
             return 0;

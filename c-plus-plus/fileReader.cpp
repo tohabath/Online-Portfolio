@@ -7,6 +7,7 @@ using namespace std;
 class fileReader {
     public:
         string readFile(string filename) {
+            //Transfers file's contents to a string.
             ifstream f;
             string s;
             f.open (filename);
@@ -19,7 +20,10 @@ class fileReader {
             f.close();
             return s;
         }
-        list<string> dissectFile(string s)
+        list<string> dissectFile(string s) 
+        // Takes each word from the string, 
+        // removes punctuation and separates by space, 
+        // then plugs it into the list var words.
         {
             list<string> words;
             int i = 0;
