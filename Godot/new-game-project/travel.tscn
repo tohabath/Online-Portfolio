@@ -1,0 +1,263 @@
+[gd_scene load_steps=23 format=3 uid="uid://k6cnwx5rr777"]
+
+[ext_resource type="Script" uid="uid://bak852u6j3u7v" path="res://exit_to_main.gd" id="1_0egb5"]
+[ext_resource type="Texture2D" uid="uid://b3sp80e54rgj2" path="res://images/map.png" id="1_cmmvu"]
+[ext_resource type="Script" uid="uid://b8sblubehqho0" path="res://travel.gd" id="1_ixxjm"]
+[ext_resource type="Texture2D" uid="uid://c4vkmpyfuviu5" path="res://images/man/frame0000.png" id="3_cmmvu"]
+[ext_resource type="Curve2D" uid="uid://dntpapg1fmt1m" path="res://travel/travel1.tres" id="3_yjggk"]
+[ext_resource type="Script" uid="uid://bsfeun2q71pf2" path="res://path_follower.gd" id="4_7662c"]
+[ext_resource type="Texture2D" uid="uid://cb6v73w03d6gl" path="res://images/man/frame0001.png" id="4_yjggk"]
+[ext_resource type="Texture2D" uid="uid://dk4hn32cq63fu" path="res://images/man/frame0002.png" id="5_mtpht"]
+[ext_resource type="Texture2D" uid="uid://dkdbx08mhfsqf" path="res://images/man/frame0003.png" id="6_o836y"]
+[ext_resource type="Texture2D" uid="uid://dcv7d5w2eunxg" path="res://images/man/frame0004.png" id="7_8fq48"]
+[ext_resource type="Texture2D" uid="uid://cbusbuubmgcut" path="res://images/man/frame0005.png" id="8_wspxp"]
+[ext_resource type="Texture2D" uid="uid://cwrw07l62b3bb" path="res://images/man/frame0006.png" id="9_k8yt7"]
+[ext_resource type="Texture2D" uid="uid://di02oc37lx7gn" path="res://images/man/frame0007.png" id="10_0egb5"]
+[ext_resource type="Texture2D" uid="uid://b1hrr27p2vlva" path="res://images/man/frame0008.png" id="11_jucr3"]
+[ext_resource type="Texture2D" uid="uid://be6x5jcejdf7e" path="res://images/man/frame0009.png" id="12_rmjud"]
+[ext_resource type="Texture2D" uid="uid://bbygdlkpk5iof" path="res://images/man/frame0010.png" id="13_nd5hk"]
+[ext_resource type="Curve2D" uid="uid://2yssl4a8utt3" path="res://travel/travel2.tres" id="16_wspxp"]
+[ext_resource type="Curve2D" uid="uid://cf5mqqeq71mlt" path="res://travel/travel3.tres" id="17_k8yt7"]
+[ext_resource type="Curve2D" uid="uid://bnhvjsuuh114n" path="res://travel/travel4.tres" id="18_0egb5"]
+[ext_resource type="Curve2D" uid="uid://cxtcslxrue3w8" path="res://travel/travel5.tres" id="19_jucr3"]
+[ext_resource type="Curve2D" uid="uid://bdjf6ftrh6h0u" path="res://travel/travel6.tres" id="20_k8yt7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_puuq5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cmmvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yjggk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mtpht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o836y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8fq48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wspxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_k8yt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0egb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jucr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rmjud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nd5hk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_0egb5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_cmmvu")
+expand_mode = 2
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_ixxjm")
+
+[node name="Scene 1" type="Path2D" parent="Node2D"]
+visible = false
+position = Vector2(-30.9222, -499.125)
+scale = Vector2(1.02594, 3.0625)
+curve = ExtResource("3_yjggk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Scene 1"]
+position = Vector2(941.5, 218.816)
+rotation = -3.11953
+rotates = false
+loop = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Scene 1/PathFollow2D"]
+position = Vector2(2.92409, -1.30608)
+scale = Vector2(0.25, 0.079)
+sprite_frames = SubResource("SpriteFrames_puuq5")
+frame = 6
+frame_progress = 0.230798
+offset = Vector2(0, 100)
+flip_h = true
+flip_v = true
+script = ExtResource("4_7662c")
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/Scene 1/PathFollow2D/AnimatedSprite2D"]
+zoom = Vector2(2.3, 2.3)
+limit_left = 3
+limit_top = 3
+limit_right = 1150
+limit_bottom = 645
+
+[node name="Scene 2" type="Path2D" parent="Node2D"]
+visible = false
+position = Vector2(-30.9222, -499.125)
+scale = Vector2(1.02594, 3.0625)
+curve = ExtResource("16_wspxp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Scene 2"]
+position = Vector2(719.265, 217.837)
+rotation = -3.11953
+rotates = false
+loop = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Scene 2/PathFollow2D"]
+position = Vector2(2.92409, -1.30608)
+scale = Vector2(0.25, 0.079)
+sprite_frames = SubResource("SpriteFrames_puuq5")
+frame = 6
+frame_progress = 0.230798
+offset = Vector2(0, 100)
+flip_h = true
+flip_v = true
+script = ExtResource("4_7662c")
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/Scene 2/PathFollow2D/AnimatedSprite2D"]
+zoom = Vector2(2.3, 2.3)
+limit_left = 3
+limit_top = 3
+limit_right = 1150
+limit_bottom = 645
+
+[node name="Scene 3" type="Path2D" parent="Node2D"]
+visible = false
+position = Vector2(-30.9222, -499.125)
+scale = Vector2(1.02594, 3.0625)
+curve = ExtResource("17_k8yt7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Scene 3"]
+position = Vector2(779.697, 283.796)
+rotation = -3.11953
+rotates = false
+loop = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Scene 3/PathFollow2D"]
+position = Vector2(2.92409, -1.30608)
+scale = Vector2(0.25, 0.079)
+sprite_frames = SubResource("SpriteFrames_puuq5")
+frame = 6
+frame_progress = 0.230798
+offset = Vector2(0, 100)
+flip_h = true
+flip_v = true
+script = ExtResource("4_7662c")
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/Scene 3/PathFollow2D/AnimatedSprite2D"]
+zoom = Vector2(2.3, 2.3)
+limit_left = 3
+limit_top = 3
+limit_right = 1150
+limit_bottom = 645
+
+[node name="Scene 4" type="Path2D" parent="Node2D"]
+visible = false
+position = Vector2(-30.9222, -499.125)
+scale = Vector2(1.02594, 3.0625)
+curve = ExtResource("18_0egb5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Scene 4"]
+position = Vector2(542.841, 266.163)
+rotation = -3.11953
+rotates = false
+loop = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Scene 4/PathFollow2D"]
+position = Vector2(2.92409, -1.30608)
+scale = Vector2(0.25, 0.079)
+sprite_frames = SubResource("SpriteFrames_puuq5")
+frame = 6
+frame_progress = 0.230798
+offset = Vector2(0, 100)
+flip_h = true
+flip_v = true
+script = ExtResource("4_7662c")
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/Scene 4/PathFollow2D/AnimatedSprite2D"]
+zoom = Vector2(2.3, 2.3)
+limit_left = 3
+limit_top = 3
+limit_right = 1150
+limit_bottom = 645
+
+[node name="Scene 5" type="Path2D" parent="Node2D"]
+visible = false
+position = Vector2(-30.9222, -499.125)
+scale = Vector2(1.02594, 3.0625)
+curve = ExtResource("19_jucr3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Scene 5"]
+position = Vector2(588.653, 335.388)
+rotation = -3.11953
+rotates = false
+loop = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Scene 5/PathFollow2D"]
+position = Vector2(2.92409, -1.30608)
+scale = Vector2(0.25, 0.079)
+sprite_frames = SubResource("SpriteFrames_puuq5")
+frame = 6
+frame_progress = 0.230798
+offset = Vector2(0, 100)
+flip_h = true
+flip_v = true
+script = ExtResource("4_7662c")
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/Scene 5/PathFollow2D/AnimatedSprite2D"]
+zoom = Vector2(2.3, 2.3)
+limit_left = 3
+limit_top = 3
+limit_right = 1150
+limit_bottom = 645
+
+[node name="Scene 6" type="Path2D" parent="Node2D"]
+visible = false
+position = Vector2(-30.9222, -499.125)
+scale = Vector2(1.02594, 3.0625)
+curve = ExtResource("20_k8yt7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Scene 6"]
+position = Vector2(258.224, 299.143)
+rotation = -3.11953
+rotates = false
+loop = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Scene 6/PathFollow2D"]
+position = Vector2(2.92409, -1.30608)
+scale = Vector2(0.25, 0.079)
+sprite_frames = SubResource("SpriteFrames_puuq5")
+frame = 6
+frame_progress = 0.230798
+offset = Vector2(0, 100)
+flip_h = true
+flip_v = true
+script = ExtResource("4_7662c")
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/Scene 6/PathFollow2D/AnimatedSprite2D"]
+zoom = Vector2(2.3, 2.3)
+limit_left = 3
+limit_top = 3
+limit_right = 1150
+limit_bottom = 645
+
+[connection signal="Traveled" from="Node2D/Scene 1/PathFollow2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_traveled"]

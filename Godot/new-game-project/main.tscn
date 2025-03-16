@@ -1,0 +1,153 @@
+[gd_scene load_steps=10 format=3 uid="uid://de6kqh66bbqnk"]
+
+[ext_resource type="Script" uid="uid://yjkp5flgs5fg" path="res://canvas_layer.gd" id="1_84e07"]
+[ext_resource type="Script" uid="uid://d2fka264dvjkj" path="res://tooltips.gd" id="1_lquwl"]
+[ext_resource type="FontFile" uid="uid://47iv4cpe5k3" path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://c3upsu8yx8suf" path="res://line_edit.gd" id="2_deohw"]
+[ext_resource type="FontFile" uid="uid://5sjq4djsdg2m" path="res://fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf" id="3_r5txa"]
+[ext_resource type="RichTextEffect" uid="uid://dmowmfk50w31e" path="res://ghost_effect.tres" id="5_7mycd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0, 0, 0, 0.564706)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfvji"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7mycd"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_84e07")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+y_sort_enabled = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+custom_minimum_size = Vector2(500, 600)
+anchors_preset = -1
+anchor_left = 0.283
+anchor_right = 0.717
+anchor_bottom = 1.0
+offset_left = 249.984
+offset_right = -249.984
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_1bvp3")
+
+[node name="PlayerInput" type="Control" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/Panel/PlayerInput"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.116
+anchor_top = 0.79
+anchor_right = 0.884
+anchor_bottom = 0.889
+offset_top = 32.08
+offset_right = -3.05176e-05
+offset_bottom = -0.0720215
+theme_override_colors/caret_color = Color(0.400698, 0.400698, 0.400698, 1)
+theme_override_fonts/font = ExtResource("3_r5txa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tfvji")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7mycd")
+placeholder_text = "I await your command..."
+max_length = 25
+clear_button_enabled = true
+flat = true
+select_all_on_focus = true
+caret_blink = true
+script = ExtResource("2_deohw")
+
+[node name="Line2D" type="Line2D" parent="CanvasLayer/Panel/PlayerInput"]
+position = Vector2(11.3065, 592)
+scale = Vector2(1.14516, 1)
+points = PackedVector2Array(40.7746, -16, 376.099, -16)
+width = 1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/PlayerInput"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.004
+anchor_top = 0.778
+anchor_right = 0.1
+anchor_bottom = 0.889
+offset_top = -0.144043
+offset_bottom = -0.0720215
+theme_override_colors/font_color = Color(0.686275, 0.588235, 0.196078, 0.784314)
+theme_override_fonts/font = ExtResource("3_r5txa")
+theme_override_font_sizes/font_size = 24
+text = "GO:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.029
+anchor_right = 1.0
+anchor_bottom = 0.75
+offset_top = 0.208
+offset_bottom = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(0.599882, 0.6008, 0.687203, 1)
+theme_override_fonts/normal_font = ExtResource("2_1bvp3")
+theme_override_fonts/italics_font = ExtResource("3_r5txa")
+bbcode_enabled = true
+text = "Text"
+custom_effects = [ExtResource("5_7mycd")]
+meta_underlined = false
+hint_underlined = false
+script = ExtResource("1_lquwl")
+
+[node name="Sound" type="AudioStreamPlayer" parent="CanvasLayer"]
+
+[node name="Music" type="AudioStreamPlayer" parent="CanvasLayer"]
+
+[connection signal="focus_entered" from="CanvasLayer/Panel/PlayerInput/LineEdit" to="CanvasLayer" method="_on_line_edit_focus_entered"]
+[connection signal="focus_exited" from="CanvasLayer/Panel/PlayerInput/LineEdit" to="CanvasLayer" method="_on_line_edit_focus_exited"]
+[connection signal="text_submitted" from="CanvasLayer/Panel/PlayerInput/LineEdit" to="CanvasLayer" method="_on_line_edit_text_submitted"]
