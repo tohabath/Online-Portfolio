@@ -9,8 +9,14 @@ func _make_custom_tooltip(for_text: String) -> Object:
 		toolTipLabel.add_theme_font_override("normal_font", load("res://fonts/OpenSans-VariableFont_wdth,wght.ttf"))
 		toolTipLabel.add_theme_color_override("default_color", Color("#000000"))
 		var usedFont: Font = toolTipLabel.get_theme_default_font()
-		var cmin: Vector2 = usedFont.get_string_size(for_text)
-		toolTipLabel.custom_minimum_size = cmin
+		#var cmin: Vector2 = usedFont.get_string_size(for_text)
+		#cmin.x /=1.5
+		#cmin.y *= 2
+		toolTipLabel.autowrap_mode = 3
+		toolTipLabel.fit_content = true
+		#toolTipLabel.custom_minimum_size = cmin
+		toolTipLabel.custom_minimum_size.x = 250
+		toolTipLabel.custom_minimum_size.y = 25
 		var style_box: StyleBoxFlat = StyleBoxFlat.new()
 		style_box.set_bg_color(Color("#9999af"))
 		style_box.set_border_color(Color("#9999af"))

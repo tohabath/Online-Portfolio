@@ -21,4 +21,5 @@ func _process_custom_fx(char_fx):
 "
 
 [resource]
+resource_name = "ghost"
 script = SubResource("GDScript_gt4qy")

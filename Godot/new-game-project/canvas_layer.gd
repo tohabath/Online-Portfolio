@@ -34,31 +34,35 @@ var genie_flavor_error = ["I can’t do that.", "I don’t understand.", "No can
 # Main Story
 func _ready():
 	fade_in(storyBox)
-	storyBox.text = "[font_size=25][b]Welcome![/b][/font_size]\n\nSay [hint=A command you can do.][u]yes[/u][/hint] in the box, and press enter."
-	background.texture = load("res://images/backgrounds/until-further-notice.png")
+	match Global.scene:
+		0:
+			storyBox.text = "[font_size=25][b]Epigon[/b][/font_size]\n\nAre you ready to [hint=To play, write this into the text field below, and press enter.][u]begin[/u][/hint] the story?"
+			background.texture = load("res://images/backgrounds/until-further-notice.png")
+		1:
+			storyBox.text = "[font_size=25][b]To Be Continued[/b][/font_size]"
+			genie.visible = false
 
 # Player inputs text
 func _on_line_edit_text_submitted(new_text):
 	# use story script to decide current story
-	var returnedStory = Global._return_story(new_text.to_lower())[0]
+	var returnedStory = Global._return_story(new_text.to_lower())
 	# If input unacceptable, tell player
-	if (returnedStory == "TravelingToOtherWorld"):
+	if (returnedStory[0] == "TravelingToOtherWorld"):
 		fade_out(fullSliver)
 		await get_tree().create_timer(fade_duration).timeout
 		fade_out(background)
 		await get_tree().create_timer(fade_duration).timeout
 		get_tree().change_scene_to_file("res://travel.tscn")
-	elif (returnedStory != "ErrorMessageOutput"):
+	elif (returnedStory[0] != "ErrorMessageOutput"):
 		# Change background
-		if (Global._return_story(new_text.to_lower())[1] != null):
-			var returnedBackground = Global._return_story(new_text.to_lower())[1]
-			background.texture = load(returnedBackground)
+		if returnedStory[1] != null:
+			background.texture = load(returnedStory[1])
 			fade_in(background)
 		# Change text
 		_genie_response(genie_flavor.pick_random())
 		fade_out(storyBox)
 		await get_tree().create_timer(fade_duration).timeout
-		storyBox.text = returnedStory
+		storyBox.text = returnedStory[0]
 		fade_in(storyBox)
 	else:
 		# Input disqualified

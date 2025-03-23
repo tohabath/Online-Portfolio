@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpgswg5238f4s"]
+[gd_scene load_steps=4 format=3 uid="uid://cpgswg5238f4s"]
 
 [ext_resource type="Script" uid="uid://8qjwsbqwlvg8" path="res://global.gd" id="1_4mbhf"]
+[ext_resource type="AudioStream" uid="uid://fu7vjsodd112" path="res://music/sootrock.mp3" id="2_hnvys"]
+[ext_resource type="AudioStream" uid="uid://btpfsgqt053tb" path="res://music/wellmarch.mp3" id="3_75gqh"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_4mbhf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hnvys")
+volume_db = -15.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_75gqh")
+volume_db = -5.0
